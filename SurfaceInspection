@@ -1,0 +1,27 @@
+#include "vex.h"
+
+using namespace vex;
+
+void detect(){
+  Drivetrain.drive(forward);
+    waitUntil(FrontDistance.distance(mm) < 280);
+    Drivetrain.stop();
+    wait(0.5, seconds);
+}
+
+int main() {
+  vexcodeInit();
+
+  wait(0.5, seconds);
+  detect();
+  Drivetrain.turnFor(right, 90, degrees);
+  wait(0.25, seconds);
+  detect();
+  Drivetrain.turnFor(right, 89, degrees);
+  wait(0.25, seconds);
+  detect();
+  Drivetrain.turnFor(right, 88, degrees);
+  wait(0.25, seconds);
+  detect();
+  Drivetrain.turnFor(right, 88, degrees);
+}
